@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document Intake - Technical Envelope",
+  "description": "JSON Schema for the LUCID Document Intake technical envelope (spec v1.1.0).\nThis schema validates the processing envelope returned by the intake pipeline and provides machine-readable guidance about expected extraction fields per category.",
+  "$id": "https://raw.githubusercontent.com/jaidansmithhh/LucidDreamTest/main/schemas/document-intake.schema.json",
+  "type": "object",
+  "required": [
+    "document_id",
+    "source_system",
+    "source_file_id",
+    "source_revision",
+    "original_filename",
+    "source_locator",
+    "received_at",
+    "document_category",
+    "processing_status",
+    "review_required",
+    "fields",
+    "exceptions",
+    "audit"
+  ],
+  "properties": {
+    "document_id": { "type": "string", "description": "Stable internal document ID (UUID or internal key)." },
+    "source_system": { "type": "string", "description": "Source system identifier (e.g., dropbox, drive, manual_upload)." },
+    "source_file_id": { "type": "string", "description": "Provider file ID or assigned upload ID." },
+    "source_revision": { "type": "string", "description": "Provider revision/version or content hash." },
+    "original_filename": { "type": "string" },
+    "source_locator": { "type": "string", "description": "Access-controlled original-file reference or locator." },
+    "received_at": { "type": "string", "format": "date-time", "description": "Intake timestamp in ISO 8601." },
+    "document_category": {
+      "type": "string",
+      "description": "Proposed supported category or 'Other'.",
+      "enum": [
+        "Property / Cityscape Report",
+        "Property Tax Record",
+        "Title / Deed / Court Record",
+        "Lease / Rent Roll",
+        "Operating Statement / Offering Memorandum",
+        "Financing / Loan Document",
+        "Purchase / LOI / Transaction Document",
+        "Inspection / Work Write-Up / Construction",
+        "Insurance",
+        "Funding / Grant Report",
+        "Invoice / Supporting Financial Record",
+        "Other / Needs Classification"
+      ]
+    },
+    "property_ids": { "type": "array", "items": { "type": "string" }, "description": "Proposed master-record matches; may be empty." },
+    "deal_ids": { "type": "array", "items": { "type": "string" } },
+    "entity_ids": { "type": "array", "items": { "type": "string" } },
+    "property_addresses": { "type": "array", "items": { "type": "string" }, "description": "Addresses observed in the source; preserve multiplicity." },
+    "pins": { "type": "array", "items": { "type": "string" }, "description": "Parcel identifiers observed; preserve multiplicity." },
+    "scenario": { "type": ["string", "null"], "description": "Scenario or context when applicable." },
+    "reporting_period": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "properties": {
+            "start": { "type": "string", "format": "date" },
+            "end": { "type": "string", "format": "date" }
+          },
+          "required": ["start", "end"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "document_date": { "type": ["string", "null"], "format": "date", "description": "Date supported by the document (ISO date)." },
+    "proposed_filename": { "type": ["string", "null"] },
+    "proposed_location": { "type": ["string", "null"] },
+    "processing_status": { "type": "string", "enum": ["queued", "processing", "processed", "failed"] },
+    "review_required": { "type": "boolean" },
+    "review_reasons": { "type": "array", "items": { "type": "string" } },
+    "fields": {
+      "type": "array",
+      "description": "Array of extracted facts with evidence and verification state.",
+      "items": { "$ref": "#/definitions/field" }
+    },
+    "exceptions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/exception" }
+    },
+    "audit": { "$ref": "#/definitions/audit" }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "field": {
+      "type": "object",
+      "required": ["field_name", "source_document_id", "source_revision", "extracted_at", "verification_state"],
+      "properties": {
+        "field_name": { "type": "string", "description": "Canonical field key (e.g., invoice_number, purchase_price)." },
+        "value": { "description": "Raw extracted value; type may vary (string, number, object)." },
+        "normalized_value": { "description": "Normalized/canonical form (ISO dates, decimal currency, etc.)." },
+        "units": { "type": "string", "description": "Units or currency code when applicable (e.g., USD)." },
+        "source_document_id": { "type": "string" },
+        "source_revision": { "type": "string" },
+        "page_reference": {
+          "type": "object",
+          "properties": {
+            "page": { "type": "integer" },
+            "bbox": {
+              "type": "array",
+              "items": { "type": "number" },
+              "description": "Optional bounding box [x1, y1, x2, y2] in PDF/image coordinates." 
+            }
+          },
+          "additionalProperties": false
+        },
+        "source_excerpt": { "type": "string", "description": "Source text snippet for the extracted value (preserve original wording)." },
+        "extracted_at": { "type": "string", "format": "date-time" },
+        "verification_state": { "type": "string", "enum": ["unverified", "needs_review", "human_verified", "rejected"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1, "description": "Optional model confidence score (0.0-1.0)." },
+        "missing_reason": { "type": "string", "description": "If value is null, explicit reason: 'unreadable', 'not_applicable', 'absent', etc." }
+      },
+      "additionalProperties": false
+    },
+    "exception": {
+      "type": "object",
+      "required": ["code", "message"],
+      "properties": {
+        "code": { "type": "string" },
+        "message": { "type": "string" },
+        "details": { "type": "object", "additionalProperties": true }
+      },
+      "additionalProperties": false
+    },
+    "audit": {
+      "type": "object",
+      "properties": {
+        "processor_version": { "type": "string" },
+        "spec_version": { "type": "string" },
+        "ingestion_run_id": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "examples": [
+    {
+      "document_id": "sample-document-001",
+      "source_system": "manual_upload",
+      "source_file_id": "sample-upload-001",
+      "source_revision": "sample-revision-001",
+      "original_filename": "sample-property-tax-report.pdf",
+      "source_locator": "internal://documents/sample-document-001",
+      "received_at": "2026-10-15T16:00:00Z",
+      "document_category": "Property Tax Record",
+      "property_ids": [],
+      "deal_ids": [],
+      "entity_ids": [],
+      "property_addresses": [],
+      "pins": [],
+      "scenario": null,
+      "reporting_period": null,
+      "document_date": null,
+      "processing_status": "processed",
+      "review_required": true,
+      "review_reasons": ["Property/PIN match unresolved"],
+      "fields": [],
+      "exceptions": [{ "code": "MATCH_UNRESOLVED", "message": "Human triage required" }],
+      "audit": { "processor_version": "1.1.0", "spec_version": "1.1.0" }
+    }
+  ]
+}
