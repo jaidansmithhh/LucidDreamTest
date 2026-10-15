@@ -1,0 +1,299 @@
+{
+  "document_id": "tax-bill-16183270160000-2024-installment-2",
+  "source_system": "manual_upload",
+  "source_file_id": "libfile_106616d24e8c8191863be5c4a55c7236",
+  "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+  "original_filename": "6912 2024 Tax Bill.pdf",
+  "source_locator": "library://libfile_106616d24e8c8191863be5c4a55c7236",
+  "received_at": "2026-10-15T16:54:51.269287Z",
+  "document_category": "Property Tax Record",
+  "property_ids": [],
+  "deal_ids": [],
+  "entity_ids": [],
+  "property_addresses": [
+    "1196 ROOSEVELT RD, OAK PARK IL 00000"
+  ],
+  "pins": [
+    "16-18-327-016-0000"
+  ],
+  "scenario": null,
+  "reporting_period": {
+    "start": "2024-01-01",
+    "end": "2024-12-31"
+  },
+  "document_date": null,
+  "proposed_filename": "16183270160000_Tax_2024_Installment_2.pdf",
+  "proposed_location": null,
+  "processing_status": "processed",
+  "review_required": true,
+  "review_reasons": [
+    "Printed property-location ZIP is 00000. Preserve source text; do not infer a corrected ZIP.",
+    "No live tax-portal lookup was performed. Displayed zero due is not represented as current balance or proof of full payment.",
+    "First-installment payment acknowledgment is $13,947.17; tax-calculator first installment is $13,251.44. Preserve both; do not infer the reason.",
+    "Bill identifies tax year 2024 payable in 2025 but displays due date 09/15/2026. Preserve all dates as printed and review context without correction."
+  ],
+  "fields": [
+    {
+      "field_name": "pin",
+      "value": "16-18-327-016-0000",
+      "normalized_value": "16-18-327-016-0000",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "Property Index Number (PIN) 16-18-327-016-0000",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "property_address",
+      "value": "1196 ROOSEVELT RD, OAK PARK IL 00000",
+      "normalized_value": "1196 ROOSEVELT RD, OAK PARK IL 00000",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "PROPERTY LOCATION: 1196 ROOSEVELT RD / OAK PARK IL 00000",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "township",
+      "value": "Oak Park",
+      "normalized_value": "Oak Park",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "Township Oak Park",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "classification",
+      "value": "5-17",
+      "normalized_value": "5-17",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "Classification 5-17",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "tax_year",
+      "value": 2024,
+      "normalized_value": 2024,
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "Tax Year 2024",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "payable_year",
+      "value": 2025,
+      "normalized_value": 2025,
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "(Payable In) (2025)",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "installment",
+      "value": 2,
+      "normalized_value": 2,
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Second Installment Property Tax Bill - Cook County Electronic Bill",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "annual_tax_before_exemptions",
+      "value": "25138.06",
+      "normalized_value": "25138.06",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Total Tax Before Exemptions 25,138.06",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "annual_tax_after_exemptions",
+      "value": "25138.06",
+      "normalized_value": "25138.06",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Total Tax After Exemptions 25,138.06",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "first_installment_tax",
+      "value": "13251.44",
+      "normalized_value": "13251.44",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "First Installment 13,251.44",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "second_installment_tax",
+      "value": "11886.62",
+      "normalized_value": "11886.62",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "Second Installment + 11,886.62",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "total_payment_due_as_displayed",
+      "value": "0.00",
+      "normalized_value": "0.00",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "TOTAL PAYMENT DUE $0.00 By 09/15/2026",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "due_date_as_displayed",
+      "value": "2026-09-15",
+      "normalized_value": "2026-09-15",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "By 09/15/2026",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified"
+    },
+    {
+      "field_name": "first_installment_payment_acknowledged",
+      "value": "13947.17",
+      "normalized_value": "13947.17",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "THANK YOU FOR YOUR FIRST INSTALLMENT PAYMENT OF: $13,947.17",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "prior_year_annual_tax",
+      "value": "24093.52",
+      "normalized_value": "24093.52",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2023 Tax $24,093.52",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "annual_tax_increase",
+      "value": "1044.54",
+      "normalized_value": "1044.54",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "$1,044.54 MORE than 2023",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "assessed_value_2024",
+      "value": "73906",
+      "normalized_value": "73906",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Assessed Value 73,906",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "equalized_assessed_value_2024",
+      "value": "224342",
+      "normalized_value": "224342",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Equalized Assessed Value (EAV) 224,342",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "USD"
+    },
+    {
+      "field_name": "local_tax_rate_percent",
+      "value": "11.205238",
+      "normalized_value": "11.205238",
+      "source_document_id": "tax-bill-16183270160000-2024-installment-2",
+      "source_revision": "sha256:456eedbbf2e1a2dd72a28651b0b4eb590744b61eb0b18eb94beb65d59178d7bb",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "2024 Local Tax Rate X 11.205238%",
+      "extracted_at": "2026-10-15T16:54:51.269287Z",
+      "verification_state": "unverified",
+      "units": "percent"
+    }
+  ],
+  "exceptions": [
+    {
+      "code": "PLACEHOLDER_POSTAL_CODE",
+      "message": "Printed property-location ZIP is 00000. Preserve source text; do not infer a corrected ZIP."
+    },
+    {
+      "code": "CURRENT_ACCOUNT_STATUS_NOT_VERIFIED",
+      "message": "No live tax-portal lookup was performed. Displayed zero due is not represented as current balance or proof of full payment."
+    },
+    {
+      "code": "PAYMENT_AMOUNT_RECONCILIATION_REQUIRED",
+      "message": "First-installment payment acknowledgment is $13,947.17; tax-calculator first installment is $13,251.44. Preserve both; do not infer the reason."
+    },
+    {
+      "code": "TAX_YEAR_DUE_DATE_CONTEXT",
+      "message": "Bill identifies tax year 2024 payable in 2025 but displays due date 09/15/2026. Preserve all dates as printed and review context without correction."
+    }
+  ],
+  "audit": {
+    "processor_version": "assisted-source-extraction-1.0.0",
+    "spec_version": "1.1.0",
+    "ingestion_run_id": "uploaded-tax-bill-2024-001",
+    "created_at": "2026-10-15T16:54:51.269287Z",
+    "updated_at": "2026-10-15T16:54:55Z",
+    "synthetic": false,
+    "source_pages": 3,
+    "extraction_method": "PDF text extraction with page 1 visual cross-check",
+    "live_portal_search_performed": false,
+    "human_verification_recorded": false,
+    "source_locator_note": "Internal provenance reference, not a public download URL or n8n credential. Configure authorized retrieval separately.",
+    "reporting_period_note": "Calendar-year normalization of printed Tax Year 2024; start/end dates are derived, not quoted.",
+    "template_scope": "Cook County second-installment electronic tax bill. Conditional fields must be adapted for other tax-record layouts.",
+    "property_alias_confirmation": {
+      "source": "User confirmation in this conversation on 2026-10-15",
+      "statement": "1196 Roosevelt Rd and 6912 refer to the same building, which has multiple street addresses.",
+      "source_printed_address": "1196 ROOSEVELT RD, OAK PARK IL 00000",
+      "user_confirmed_alias": "6912",
+      "matching_guidance": "Treat these as aliases for one building, not conflicting properties. Retain the printed PIN for parcel-level matching; do not infer that all building parcels share this PIN.",
+      "scope": "Alias confirmation only; does not verify tax amounts, payment status, or assign a master database ID."
+    },
+    "fixture_version": "1.1.0"
+  }
+}
