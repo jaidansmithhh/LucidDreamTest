@@ -1,0 +1,51 @@
+{
+  "document_id": "sample-document-001",
+  "source_system": "manual_upload",
+  "source_file_id": "sample-upload-001",
+  "source_revision": "rev-1",
+  "original_filename": "sample-property-tax-report.pdf",
+  "source_locator": "internal://documents/sample-document-001",
+  "received_at": "2026-10-15T16:00:00Z",
+  "document_category": "Property Tax Record",
+  "property_ids": ["property-5110-w-madison"],
+  "deal_ids": [],
+  "entity_ids": [],
+  "property_addresses": ["5110 W Madison Ave, Chicago, IL"],
+  "pins": ["12-34-567-890"],
+  "scenario": null,
+  "reporting_period": null,
+  "document_date": "2026-09-30",
+  "processing_status": "processed",
+  "review_required": true,
+  "review_reasons": ["Property/PIN match unresolved"],
+  "fields": [
+    {
+      "field_name": "pin",
+      "value": "12-34-567-890",
+      "normalized_value": "12-34-567-890",
+      "units": null,
+      "source_document_id": "sample-document-001",
+      "source_revision": "rev-1",
+      "page_reference": { "page": 1 },
+      "source_excerpt": "PIN: 12-34-567-890",
+      "extracted_at": "2026-10-15T16:01:00Z",
+      "verification_state": "needs_review",
+      "confidence": 0.87
+    },
+    {
+      "field_name": "tax_amount",
+      "value": "$1,234.56",
+      "normalized_value": 1234.56,
+      "units": "USD",
+      "source_document_id": "sample-document-001",
+      "source_revision": "rev-1",
+      "page_reference": { "page": 2 },
+      "source_excerpt": "Total Due: $1,234.56",
+      "extracted_at": "2026-10-15T16:01:05Z",
+      "verification_state": "unverified",
+      "confidence": 0.91
+    }
+  ],
+  "exceptions": [ { "code": "MATCH_UNRESOLVED", "message": "Human triage required" } ],
+  "audit": { "processor_version": "1.1.0", "spec_version": "1.1.0", "created_at": "2026-10-15T16:01:10Z" }
+}
